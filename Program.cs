@@ -56,5 +56,38 @@ namespace Ejercicios_POO
                 }
             }
         }
+        static void MostrarMenuBloque2()
+        {
+            int op = 0;
+            while (op != 17)
+            {
+                Console.Clear();
+                Console.WriteLine("--- BLOQUE 2: CONDICIONALES (11-16) ---");
+                Console.WriteLine("11. Positivo, negativo o cero");
+                Console.WriteLine("12. Mayor de tres números");
+                Console.WriteLine("13. Día de la semana");
+                Console.WriteLine("14. Calculadora con switch");
+                Console.WriteLine("15. Vocal o consonante");
+                Console.WriteLine("16. Calificaciones UNAH");
+                Console.WriteLine("17. Volver al menú principal");
+                Console.Write("Seleccione una opción (11-17): ");
+
+                if (int.TryParse(Console.ReadLine(), out op))
+                {
+                    switch (op)
+                    {
+                        case 11: Ejercicio11.Ejecutar(); break;
+                        case 12: Ejercicio12.Ejecutar(); break;
+                        case 13: Ejercicio13.Ejecutar(); break;
+                        case 14: Ejercicio14.Ejecutar(); break;
+                        case 15: Ejercicio15.Ejecutar(); break;
+                        case 16: Ejercicio16.Ejecutar(); break;
+                        case 17: break;
+                        default: Console.WriteLine("Opción inválida."); break;
+                    }
+                }
+                if (op != 17) { Console.WriteLine("\nPresione una tecla para continuar..."); Console.ReadKey(); }
+            }
+        }
     }
 }
